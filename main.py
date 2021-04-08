@@ -1,14 +1,16 @@
 import time
+from typing import Any
 
 from apr_cl import apr_test
 from primality_test import miller_test
 
 
-def timeit(f, *args, **kwargs):
+def timeit(f, *args, **kwargs) -> Any:
     t1 = time.time()
-    f(*args, **kwargs)
+    out = f(*args, **kwargs)
     t2 = time.time()
     print(f"elapsed time: {t2 - t1}")
+    return out
 
 
 if __name__ == "__main__":
@@ -17,8 +19,8 @@ if __name__ == "__main__":
         print(f"n = 2**{p} - 1 = {n}")
         print("apr_test", end="\t")
         if not timeit(apr_test, n):
-            raise Exception("error")
+            print("error")
         print("miller_test", end="\t")
         if not timeit(miller_test, n):
-            raise Exception("error")
+            print("error")
         print()
