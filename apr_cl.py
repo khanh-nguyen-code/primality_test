@@ -26,7 +26,7 @@ def isprime_slow(n):
 # v_q(t): how many time is t divided by q
 def v(q, t):
     ans = 0
-    while (t % q == 0):
+    while t % q == 0:
         ans += 1
         t //= q
     return ans
@@ -206,7 +206,7 @@ def smallest_primitive_root(q):
             s.add(m)
         if len(s) == q - 1:
             return r
-    return None  # error
+    raise Exception("error")
 
 
 # calculate f_q(x)
@@ -376,7 +376,7 @@ def APRtest_step4c(p, k, q, N):
     elif N % 4 == 3:
         S = (s2 * J2q * J2q).mod(N)
     else:
-        pass
+        raise Exception("error")
 
     # Is S root of unity
     exist, h = S.is_root_of_unity(N)
@@ -419,7 +419,7 @@ def APRtest_step4(p, k, q, N):
     elif p == 2 and k == 1:
         result, l_p = APRtest_step4d(p, k, q, N)
     else:
-        pass
+        raise Exception("error")
 
     if not result:
         pass
@@ -514,6 +514,7 @@ def apr_test(N):
                         break
                 i += 1
             if not found:
+                raise Exception("error")
                 return False
 
     # Step 6
