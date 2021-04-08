@@ -12,7 +12,7 @@ def timeit(f, *args, **kwargs):
 
 
 if __name__ == "__main__":
-    n = 2**521-1
+    n = 2 ** 521 - 1
     print("apr_test")
     timeit(apr_test, n)
     print("miller_test")

@@ -1,14 +1,9 @@
-# -*- coding: utf-8 -*-
-
 """
 https://github.com/wacchoz/APR_CL
 """
 
-
 import copy
-import time
-from math import gcd  # version >= 3.5
-
+import math
 
 # primality test by trial division
 def isprime_slow(n):
@@ -399,7 +394,6 @@ def APRtest_step4c(p, k, q, N):
 
 # in case of p=2 and k=1
 def APRtest_step4d(p, k, q, N):
-
     S2q = pow(-q, (N - 1) // 2, N)
     if (S2q - 1) % N != 0 and (S2q + 1) % N != 0:
         # composite
@@ -465,7 +459,7 @@ def apr_test(N):
         return False
 
     # Step 1
-    g = gcd(t * et, N)
+    g = math.gcd(t * et, N)
     if g > 1:
         return False
 
