@@ -5,6 +5,7 @@ https://github.com/wacchoz/APR_CL
 import copy
 import math
 
+
 # primality test by trial division
 def isprime_slow(n):
     if n < 2:
