@@ -2,7 +2,7 @@ import time
 from typing import Any
 
 from apr_cl import apr_test
-from primality_test import miller_test
+from miller_test import miller_test
 
 
 def timeit(f, *args, **kwargs) -> Any:
