@@ -1,7 +1,7 @@
 import time
 from typing import Any
 
-from apr_cl import apr_test
+from apr_test import apr_test
 from miller_test import miller_test
 
 
