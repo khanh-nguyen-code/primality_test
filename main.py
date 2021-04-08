@@ -16,7 +16,9 @@ if __name__ == "__main__":
         n = 2 ** p - 1
         print(f"n = 2**{p} - 1 = {n}")
         print("apr_test", end="\t")
-        timeit(apr_test, n)
+        if not timeit(apr_test, n):
+            raise Exception("error")
         print("miller_test", end="\t")
-        timeit(miller_test, n)
+        if not timeit(miller_test, n):
+            raise Exception("error")
         print()
