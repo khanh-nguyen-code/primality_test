@@ -34,13 +34,3 @@ def miller_test(n: int) -> bool:
         if not passed:
             return False
     return True
-
-
-if __name__ == "__main__":
-    n = 3
-    while True:
-        if miller_test(n):
-            print(f"{n} is prime")
-        n += 2
-        if n > 1000:
-            break
